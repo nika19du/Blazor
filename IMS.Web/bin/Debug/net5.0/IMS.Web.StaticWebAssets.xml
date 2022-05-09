@@ -1,0 +1,4 @@
+﻿<StaticWebAssets Version="1.0">
+  <ContentRoot BasePath="/" Path="C:\Users\Nika\source\repos\Blazor\IMS\IMS.Web\obj\Debug\net5.0\scopedcss\bundle\" />
+  <ContentRoot BasePath="/Identity" Path="C:\Users\Nika\.nuget\packages\microsoft.aspnetcore.identity.ui\5.0.16\staticwebassets\V4\" />
+</StaticWebAssets>

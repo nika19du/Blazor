@@ -1,0 +1,15 @@
+C:\Users\Nika\source\repos\Blazor\IMS\IMS.UseCases\bin\Debug\net5.0\IMS.UseCases.deps.json
+C:\Users\Nika\source\repos\Blazor\IMS\IMS.UseCases\bin\Debug\net5.0\IMS.UseCases.dll
+C:\Users\Nika\source\repos\Blazor\IMS\IMS.UseCases\bin\Debug\net5.0\ref\IMS.UseCases.dll
+C:\Users\Nika\source\repos\Blazor\IMS\IMS.UseCases\bin\Debug\net5.0\IMS.UseCases.pdb
+C:\Users\Nika\source\repos\Blazor\IMS\IMS.UseCases\bin\Debug\net5.0\IMS.CoreBusiness.dll
+C:\Users\Nika\source\repos\Blazor\IMS\IMS.UseCases\bin\Debug\net5.0\IMS.CoreBusiness.pdb
+C:\Users\Nika\source\repos\Blazor\IMS\IMS.UseCases\obj\Debug\net5.0\IMS.UseCases.csproj.AssemblyReference.cache
+C:\Users\Nika\source\repos\Blazor\IMS\IMS.UseCases\obj\Debug\net5.0\IMS.UseCases.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Nika\source\repos\Blazor\IMS\IMS.UseCases\obj\Debug\net5.0\IMS.UseCases.AssemblyInfoInputs.cache
+C:\Users\Nika\source\repos\Blazor\IMS\IMS.UseCases\obj\Debug\net5.0\IMS.UseCases.AssemblyInfo.cs
+C:\Users\Nika\source\repos\Blazor\IMS\IMS.UseCases\obj\Debug\net5.0\IMS.UseCases.csproj.CoreCompileInputs.cache
+C:\Users\Nika\source\repos\Blazor\IMS\IMS.UseCases\obj\Debug\net5.0\IMS.UseCases.csproj.CopyComplete
+C:\Users\Nika\source\repos\Blazor\IMS\IMS.UseCases\obj\Debug\net5.0\IMS.UseCases.dll
+C:\Users\Nika\source\repos\Blazor\IMS\IMS.UseCases\obj\Debug\net5.0\ref\IMS.UseCases.dll
+C:\Users\Nika\source\repos\Blazor\IMS\IMS.UseCases\obj\Debug\net5.0\IMS.UseCases.pdb

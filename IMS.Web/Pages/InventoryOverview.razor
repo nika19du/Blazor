@@ -1,0 +1,93 @@
+﻿@page "/inventories"
+@inject IViewInventoriesByNameUseCase ViewInventoriesByNameUseCase
+@inject NavigationManager NavigationManager
+
+<h3>Inventory Overview</h3>
+<br /> 
+
+<ViewInventoriesComponent OnSearchInventories="OnSearchInventoriess"></ViewInventoriesComponent>
+
+@*<div class="input-group mb-3">
+    <input type="text" class="form-control form-control-lg"
+           placeholder="Type inventory name here to search"
+           @bind-value="inventoryNameToSerarch" />
+    <button type="button" class="input-group-text btn-success" @onclick="@( async()=> { await ViewInventories(); })">View</button>
+</div>*@
+
+<br />
+@if (listInventories != null)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var inv in this.listInventories)
+            {
+                <tr>
+                    <td>@inv.InventoryName</td>
+                    <td>@inv.Quantity</td>
+                    <td>@inv.Price.ToString("c")</td>
+                    <td>
+                        <button type="button" class="btn btn-light" @onclick="(()=> EditInventory(inv.InventoryId))">Edit</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+<br />
+
+<button type="button"
+        class="btn btn-primary"
+        @onclick="AddInventory">
+    Add Inventory
+</button>
+@code {
+    private List<Inventory>? listInventories;
+    private string? inventoryNameToSerarch;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var inventories = (await ViewInventoriesByNameUseCase
+            .ExecuteAsync(inventoryNameToSerarch ?? string.Empty))?.ToList();
+
+        // await OnSearchInventories.InvokeAsync(inventories);
+
+        this.listInventories = inventories;
+    }
+    private void AddInventory()
+    {
+        NavigationManager.NavigateTo("/addinventory");
+    }
+
+    private void EditInventory(int invId)
+    {
+        NavigationManager.NavigateTo($"/editinventory/{invId}");
+    }
+    [Parameter]
+    public EventCallback<List<Inventory>> OnSearchInventories { get; set; }
+
+    private async Task ViewInventories()
+    {
+        var inventories = (await ViewInventoriesByNameUseCase
+            .ExecuteAsync(inventoryNameToSerarch ?? string.Empty))?.ToList();
+
+        await OnSearchInventories.InvokeAsync(inventories);
+        this.listInventories = inventories;
+        //  this.selectedInventory = null;
+
+        //we don't need this when clicking on the button, but we do need this when typing
+        StateHasChanged();
+    }
+
+    private void OnSearchInventoriess(List<Inventory> inventories)
+    {
+        listInventories = inventories;
+    }
+}

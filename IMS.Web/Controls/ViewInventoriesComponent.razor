@@ -1,0 +1,29 @@
+﻿ 
+@inject IViewInventoriesByNameUseCase ViewInventoriesByNameUseCase
+@inject NavigationManager NavigationManager
+<br />
+<div class="input-group mb-3">
+    <input type="text" class="form-control form-control-lg"
+           placeholder="Type inventory name here to search"
+           @bind-value="inventoryNameToSerarch" />
+    <button type="button" class="input-group-text btn-success" @onclick="@( async()=> { await ViewInventories(); })">View</button>
+</div>
+ 
+@code {
+    private string? inventoryNameToSerarch;
+    private List<Inventory> inventories;
+
+    [Parameter]
+    public EventCallback<List<Inventory>> OnSearchInventories { get; set; }
+
+    private async Task ViewInventories()
+    {
+        var inventories = (await ViewInventoriesByNameUseCase
+            .ExecuteAsync(inventoryNameToSerarch ?? string.Empty))?.ToList();
+
+        await OnSearchInventories.InvokeAsync(inventories);
+
+        this.inventories = inventories;
+        NavigationManager.NavigateTo("/inventories");
+    }
+}
